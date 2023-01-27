@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 
@@ -10,6 +9,7 @@ function App() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
+      credentials: "include",
     });
 
     const data = await response.json();
@@ -54,7 +54,7 @@ function App() {
         type="submit"
         onClick={(e) => {
           e.preventDefault();
-          handleSubmit(e);
+          handleSubmit();
         }}
       />
 
